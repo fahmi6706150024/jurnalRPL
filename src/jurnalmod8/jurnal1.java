@@ -14,20 +14,30 @@ import java.util.Scanner;
 public class jurnal1 {
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner show = new Scanner(System.in);
-        System.out.print("Masukan Jumlah Deret Fibonacci : ");
-        int n = show.nextInt();
-        long fib[] = new long[n];
-         
-        fib[0] = 0;
-        fib[1] = 1;
-         
-        for(int i = 2; i < n; i++) {
-            fib[i] = fib[i-1] + fib[i-2];
+       System.out.println("Jumlah Deret Fibonacci:");
+        Scanner inputFibonacci = new Scanner(System.in);
+        
+        int fibonacciCount = inputFibonacci.nextInt();
+        
+        for (int ii=0; ii < fibonacciCount; ii++)
+        {
+            System.out.println("Bilangan Fibonacci: " + methodFibonacci(ii));
         }
-         
-        for (int i = 0; i < n; i++) {
-            System.out.print(fib[i] +  " ");
+    }
+    
+     public static int methodFibonacci(int fibonacciInput)
+    {   
+        int x;
+        int n = fibonacciInput;
+        if(n <=0 || n<=1)
+        {
+           return n; 
         }
+       
+        else
+        {
+            return methodFibonacci(n-2) + methodFibonacci(n-1) ;
+        }
+            
     }
 }
